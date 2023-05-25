@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CNN - Breaking News, U.S., World, Weather, Entertainment & Video News</title>
+    <meta name="description" content="News from all around the world brought to you by CNN">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/e874c4d243.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="page-header sticky-top">
+       <div class="container">
+        <div class="header-left">
+            <div class="page-logo">
+                <a href="https://edition.cnn.com/"><img src="img/logo_cnn.png" alt="CNN logo"></a>
+            </div>
+            <nav class="page-nav">
+                <ul>
+                    <li><a href="https://edition.cnn.com/world">Regions</a></li>
+                    <li><a href="https://edition.cnn.com/politics">U.S. Politics</a></li>
+                    <li><a href="https://edition.cnn.com/business">Money</a></li>
+                    <li><a href="https://edition.cnn.com/entertainment">Entertainment</a></li>
+                    <li><a href="https://www.cnn.com/business/tech">Tech</a></li>
+                    <li><a href="https://edition.cnn.com/sport">Sport</a></li>
+                    <li><a href="https://edition.cnn.com/travel">Travel</a></li>
+                    <li><a href="https://edition.cnn.com/style">Style</a></li>
+                    <li><a href="https://edition.cnn.com/health">Health</a></li>
+                    <li><a href="https://edition.cnn.com/videos">Video</a></li>
+                    <li><a href="https://edition.cnn.com/vr">VR</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-right">
+            <div class="international-edition">
+                <input type="checkbox" id="international-switcher" hidden>
+                <label for="international-switcher">International Edition <span class="checked-change"><i class="fa-solid fa-plus"></i></span></label>
+                <div class="international-block">
+                    <ul>
+                        <li><a href="https://us.cnn.com/?hpt=header_edition-picker">U.S.</a></li>
+                        <li><a href="https://arabic.cnn.com/?hpt=header_edition-picker">Arabic</a></li>
+                        <li><a href="https://cnnespanol.cnn.com/?hpt=header_edition-picker">Español</a></li>
+                    </ul>
+                    <hr>
+                    <p>Set edition preference:</p>
+                    <div class="row-block flex-block">
+                        <input type="radio" id="us-id" name="preference">
+                        <label for="us-id">U.S.</label>
+                        <input type="radio" id="inter-id" name="preference" checked>
+                        <label for="inter-id">International</label>
+                    </div>
+                    <div class="row-block flex-block">
+                        <button class="confirm">Confirm</button>
+                    </div>
+                </div>
+            </div>
+            <div class="page-search">
+                <input type="checkbox" id="search-switcher" hidden>
+                <input type="search" class="page-search-box" placeholder="Search CNN..." id="page-search-box">
+                <label class="page-search-box-label" for="page-search-box"><a href="http://edition.cnn.com/search/">Search >></a></label>
+                <label for="search-switcher" class="search-label"><i class="fa-sharp fa-solid fa-magnifying-glass fa-flip-horizontal"></i></label>
+            </div>
+            <div class="header-expanded-menu">
+                <input type="checkbox" id="expanded-switcher" hidden>
+                <label for="expanded-switcher"><i class="fa-solid fa-bars ham"></i></label>
+                <div class="header-expanded-menu-block">
+                    <div class="expanded-top-block">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="page-search-expanded-menu">
+                                        <input type="search" class="expanded-search-box" placeholder="Search CNN..." id="expanded-search-box">
+                                        <label class="expanded-search-box-label" for="expanded-search-box"><a href="http://edition.cnn.com/search/"><i class="fa-sharp fa-solid fa-magnifying-glass fa-flip-horizontal"></i></a></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2 col-sm-12">
+                                    <div class="expanded-col">
+                                        <h3><a href="https://edition.cnn.com/world" class="extended-menu-title">Regions</a></h3>
+                                        <ul>
+                                            <li><a href="https://edition.cnn.com/us" class="expanded-top-link" class="expanded-top-link">U.S.</a></li>
+                                            <li><a href="https://edition.cnn.com/world/africa" class="expanded-top-link">Africa</a></li>
+                                            <li><a href="https://edition.cnn.com/world/americas" class="expanded-top-link">Americas</a></li>
+                                            <li><a href="https://www.cnn.com/world/asia" class="expanded-top-link">Asia</a></li>
+                                            <li><a href="https://edition.cnn.com/world/china" class="expanded-top-link">China</a></li>
+                                            <li><a href="https://edition.cnn.com/world/europe" class="expanded-top-link">Europe</a></li>
+                                            <li><a href="https://edition.cnn.com/world/middle-east" class="expanded-top-link">Middle East</a></li>
+                                            <li><a href="https://edition.cnn.com/opinions" class="expanded-top-link">Opinion</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 col-sm-12">
+                                    <div class="expanded-col">
+                                        <h3><a href="https://edition.cnn.com/politics" class="extended-menu-title">U.S. Politics</a></h3>
+                                        <ul>
+                                            <li><a href="https://edition.cnn.com/specials/politics/president-donald-trump-45" class="expanded-top-link">45</a></li>
+                                            <li><a href="https://edition.cnn.com/specials/politics/congress-capitol-hill" class="expanded-top-link">Congress</a></li>
+                                            <li><a href="https://edition.cnn.com/specials/politics/us-security" class="expanded-top-link">Security</a></li>
+                                            <li><a href="https://edition.cnn.com/politics/supreme-court" class="expanded-top-link">The Nine</a></li>
+                                            <li><a href="https://edition.cnn.com/specials/politics/trumpmerica" class="expanded-top-link">Trumpmerica</a></li>
+                                            <li><a href="https://edition.cnn.com/specials/politics/state-cnn-politics-magazine" class="expanded-top-link">State</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 col-sm-12">
+                                    <div class="expanded-col">
+                                        <h3><a href="https://edition.cnn.com/business" class="extended-menu-title">Money</a></h3>
+                                        <ul>
+                                            <li><a href="https://www.cnn.com/business" class="expanded-top-link">Business</a></li>
+                                            <li><a href="https://www.cnn.com/markets" class="expanded-top-link">Markets</a></li>
+                                            <li><a href="https://www.cnn.com/business/tech" class="expanded-top-link">Tech</a></li>
+                                            <li><a href="https://www.cnn.com/business/cars" class="expanded-top-link">Luxury</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 col-sm-12">
+                                    <div class="expanded-col">
+                                        <h3><a href="https://edition.cnn.com/entertainment" class="extended-menu-title">entertainment</a></h3>
+                                        <ul>
+                                            <li><a href="https://edition.cnn.com/entertainment/celebrities" class="expanded-top-link">Stars</a></li>
+                                            <li><a href="https://edition.cnn.com/entertainment/movies" class="expanded-top-link">Screen</a></li>
+                                            <li><a href="https://edition.cnn.com/entertainment/tv-shows" class="expanded-top-link">Binge</a></li>
+                                            <li><a href="https://edition.cnn.com/entertainment" class="expanded-top-link">Culture</a></li>
+                                            <li><a href="https://www.cnn.com/business/media" class="expanded-top-link">Media</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 col-sm-12">
+                                    <div class="expanded-col">
+                                        <h3><a href="https://www.cnn.com/business/tech" class="extended-menu-title">tech</a></h3>
+                                        <ul>
+                                            <li><a href="https://www.cnn.com/business/tech" class="expanded-top-link">Business</a></li>
+                                            <li><a href="https://www.cnn.com/business/tech" class="expanded-top-link">Culture</a></li>
+                                            <li><a href="https://www.cnn.com/business/tech" class="expanded-top-link">Gadgets</a></li>
+                                            <li><a href="https://www.cnn.com/business/tech" class="expanded-top-link">Future</a></li>
+                                            <li><a href="https://www.cnn.com/business/tech" class="expanded-top-link">Startups</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 col-sm-12">
+                                    <div class="expanded-col">
+                                        <h3><a href="https://edition.cnn.com/sport" class="extended-menu-title">Sport</a></h3>
+                                        <ul>
+                                            <li><a href="https://edition.cnn.com/sport/football" class="expanded-top-link">Football</a></li>
+                                            <li><a href="https://edition.cnn.com/sport/golf" class="expanded-top-link">Golf</a></li>
+                                            <li><a href="https://edition.cnn.com/sport/tennis" class="expanded-top-link">Tennis</a></li>
+                                            <li><a href="https://edition.cnn.com/sport/motorsport" class="expanded-top-link">Motorsport</a></li>
+                                            <li><a href="https://edition.cnn.com/sport" class="expanded-top-link">Horseracing</a></li>
+                                            <li><a href="https://edition.cnn.com/sport" class="expanded-top-link">Equestrian</a></li>
+                                            <li><a href="https://edition.cnn.com/sport" class="expanded-top-link">Sailing</a></li>
+                                            <li><a href="https://edition.cnn.com/sport" class="expanded-top-link">Skiing</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2 col-sm-12">
+                                    <div class="expanded-col">
+                                        <h3><a href="https://edition.cnn.com/travel" class="extended-menu-title">Travel</a></h3>
+                                        <ul>
+                                            <li><a href="https://edition.cnn.com/travel/aviation" class="expanded-top-link">Aviation</a></li>
+                                            <li><a href="https://edition.cnn.com/travel" class="expanded-top-link">Business Traveller</a></li>
+                                            <li><a href="https://edition.cnn.com/travel/destinations" class="expanded-top-link">Destinations</a></li>
+                                            <li><a href="https://edition.cnn.com/travel" class="expanded-top-link">Features</a></li>
+                                            <li><a href="https://edition.cnn.com/travel/food-and-drink" class="expanded-top-link">Food/Drink</a></li>
+                                            <li><a href="https://edition.cnn.com/travel/hotels" class="expanded-top-link">Hotels</a></li>
+                                            <li><a href="https://www.cnnpartners.com" class="expanded-top-link">Partner Hotels</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 col-sm-12">
+                                    <div class="expanded-col">
+                                        <h3><a href="https://edition.cnn.com/style" class="extended-menu-title">Style</a></h3>
+                                        <ul>
+                                            <li><a href="https://edition.cnn.com/style/fashion" class="expanded-top-link">Fashion</a></li>
+                                            <li><a href="https://edition.cnn.com/style/design" class="expanded-top-link">Design</a></li>
+                                            <li><a href="https://edition.cnn.com/style/architecture" class="expanded-top-link">Architecture</a></li>
+                                            <li><a href="https://edition.cnn.com/style/arts" class="expanded-top-link">Arts</a></li>
+                                            <li><a href="https://edition.cnn.com/style/autos" class="expanded-top-link">Autos</a></li>
+                                            <li><a href="https://edition.cnn.com/style/luxury" class="expanded-top-link">Luxury</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 col-sm-12">
+                                    <div class="expanded-col">
+                                        <h3><a href="https://edition.cnn.com/health" class="extended-menu-title">Health</a></h3>
+                                        <ul>
+                                            <li><a href="https://edition.cnn.com/specials/health/diet-fitness" class="expanded-top-link">Diet + Fitness</a></li>
+                                            <li><a href="https://edition.cnn.com/specials/health/living-well" class="expanded-top-link">Living Well</a></li>
+                                            <li><a href="https://edition.cnn.com/health/life-but-better/relationships" class="expanded-top-link">Parenting + Family</a></li>
+                                            <li><a href="https://edition.cnn.com/specials/health/vital-signs" class="expanded-top-link">Vital Signs</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <div class="expanded-col">
+                                        <h3><a href="https://edition.cnn.com/specials" class="extended-menu-title">Features</a></h3>
+                                        <ul>
+                                            <li><a href="https://edition.cnn.com/interactive/2018/specials/freedom-project/" class="expanded-top-link">Freedom Project</a></li>
+                                            <li><a href="https://edition.cnn.com/world/impact-your-world" class="expanded-top-link">Impact Your World</a></li>
+                                            <li><a href="https://edition.cnn.com/world/africa/inside-africa" class="expanded-top-link">Inside Africa</a></li>
+                                            <li><a href="https://edition.cnn.com/specials/opinions/two-degrees" class="expanded-top-link">2 degrees</a></li>
+                                            <li><a href="https://edition.cnn.com/specials" class="expanded-top-link">All Features</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 col-sm-12">
+                                    <div class="expanded-col">
+                                        <h3><a href="https://edition.cnn.com/videos" class="extended-menu-title">Video</a></h3>
+                                        <ul>
+                                            <li><a href="https://edition.cnn.com/specials/latest-news-videos" class="expanded-top-link">Video news</a></li>
+                                            <li><a href="https://edition.cnn.com/specials/international-video-landing/feature-show-videos" class="expanded-top-link">Feature shows</a></li>
+                                            <li><a href="https://edition.cnn.com/specials/videos/hln" class="expanded-top-link">HLN</a></li>
+                                            <li><a href="https://edition.cnn.com/tv/shows" class="expanded-top-link">TV shows</a></li>
+                                            <li><a href="https://edition.cnn.com/tv/schedule/europe" class="expanded-top-link">TV schedule</a></li>
+                                            <li><a href="https://edition.cnn.com/profiles/faces-of-cnn" class="expanded-top-link">Faces of CNN Worldwide</a></li>
+                                            <li><a href="https://edition.cnn.com/vr" class="expanded-top-link">CNN VR</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 col-sm-12">
+                                    <div class="expanded-col">
+                                        <h3><a href="https://edition.cnn.com/more" class="extended-menu-title">More...</a></h3>
+                                        <ul>
+                                            <li><a href="https://edition.cnn.com/weather" class="expanded-top-link">Weather</a></li>
+                                            <li><a href="https://edition.cnn.com/specials/cnn-heroes" class="expanded-top-link">CNN Heroes</a></li>
+                                            <li><a href="https://edition.cnn.com/profiles" class="expanded-top-link">CNN Profiles</a></li>
+                                            <li><a href="https://edition.cnn.com/profiles/cnn-leadership" class="expanded-top-link">Leadership</a></li>
+                                            <li><a href="https://cnnpressroom.blogs.cnn.com/" class="expanded-top-link">Pressroom</a></li>
+                                            <li><a href="https://edition.cnn.com/world" class="expanded-top-link">Partner sites</a></li>
+                                            <li><a href="https://edition.cnn.com/" class="expanded-top-link">iReport</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="expanded-bottom-block">
+                        <div class="container">
+                            <div class="international-block">
+                                <ul>
+                                    <li><a href="https://us.cnn.com/?hpt=header_edition-picker"><img src="img/logo-us.png" alt="US logo">U.S.</a></li>
+                                    <li><a href="https://arabic.cnn.com/?hpt=header_edition-picker"><img src="img/logo-ar.png" alt="Arabic logo">Arabic</a></li>
+                                    <li><a href="https://cnnespanol.cnn.com/?hpt=header_edition-picker"><img src="img/logo-esp.png" alt="Spanish logo">Español</a></li>
+                                </ul>
+                                <hr>
+                                <p>Set edition preference:</p>
+                                <div class="row-block flex-block">
+                                    <input type="radio" id="us-id1" name="preference1">
+                                    <label for="us-id1">U.S.</label>
+                                    <input type="radio" id="inter-id1" name="preference1" checked>
+                                    <label for="inter-id1">International</label>
+                                </div>
+                                <div class="row-block flex-block">
+                                    <button class="confirm">Confirm</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       </div>
+    </header>
+    <main class="main">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-5 flex">
+                    <h1><a href="https://edition.cnn.com/2017/06/12/europe/uk-election-theresa-may/index.html">Searching for a lifeline</a></h1>
+                    <a href="http://edition.cnn.com/2017/06/12/europe/uk-election-theresa-may/index.html" class="main-img"><img src="img/articles/article-1.jpg" alt="UK Election fallout"></a>
+                    <p class="main-img-caption">UK election fallout</p>
+                    <h4><a href="http://edition.cnn.com/2017/06/12/europe/uk-election-theresa-may/index.html">Brit PM May has lost control of her party, Parliament, policy manifesto and Brexit</a></h4>
+                    <div class="line"></div>
+                    <p><a href="http://edition.cnn.com/2017/06/09/europe/what-uk-election-means-for-us-world/index.html">What UK election earthquake means for the world</a></p>
+                    <div class="line"></div>
+                    <p><a href="http://edition.cnn.com/videos/tv/2017/06/11/exp-gps-0611-osborne-uk-election.cnn">Where do UK Conservatives go from here? <i class="fa-regular fa-circle-play"></i></a></p>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12 flex-space">
+                    <div class="img-caption">
+                        <a href="http://edition.cnn.com/2017/06/11/world/china-eastern-a330-engine-failure-sydney/index.html"><img src="img/articles/article-2.jpg" alt="plane engine"></a>
+                        <p><a href="http://edition.cnn.com/2017/06/11/world/china-eastern-a330-engine-failure-sydney/index.html">Engine part rips off passenger jet after take off</a></p>
+                    </div>
+                    <div class="img-caption">
+                        <a href="http://edition.cnn.com/2017/06/11/politics/trump-crashes-wedding/index.html"><img src="img/articles/article-3.jpg" alt="trump and bride"></a>
+                        <p><a href="http://edition.cnn.com/2017/06/11/politics/trump-crashes-wedding/index.html">Trump crashes New Jersey wedding</a></p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12 flex">
+                    <h4 class="section-header">Top stories</h4>
+                    <a href="http://edition.cnn.com/2017/06/11/europe/french-parliament-election-macron/index.html"><img src="img/articles/article-4.jpg" alt="french president"></a>
+                    <p class="large"><a href="http://edition.cnn.com/2017/06/11/europe/french-parliament-election-macron/index.html">Macron on course for huge gains in French parliamentary elections</a></p>
+                    <div class="line"></div>
+                    <p><a href="http://edition.cnn.com/2017/06/12/politics/trump-sessions-comey/index.html">Russia cloud settles in over Trump</a></p>
+                    <div class="line"></div>
+                    <p><a href="http://edition.cnn.com/2017/06/12/americas/puerto-rico-statehood-referendum/index.html">Puerto Rico votes to become 51st US state</a></p>
+                    <div class="line"></div>
+                    <p><a href="http://edition.cnn.com/2017/06/11/asia/south-korea-lgbt-military/index.html">Arrests as South Korean military conducts 'gay witch-hunt'</a></p>
+                    <div class="line"></div>
+                    <p><a href="http://edition.cnn.com/2017/06/11/politics/white-house-donald-trump-tapes/index.html">If there are Comey tapes, does Trump have to turn them over?</a></p>
+                    <div class="line"></div>
+                    <p><a href="http://edition.cnn.com/2017/06/12/middleeast/gulf-crisis-threatens-to-separate-qatari-mom-from-kids/index.html">Gulf crisis threatens to tear families apart</a></p>
+                    <div class="line"></div>
+                    <p><a href="http://edition.cnn.com/2017/06/11/politics/preet-bharara-donald-trump/index.html">Ex-US attorney opens up about Trump calls</a></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-12 flex">
+                    <h4 class="section-header">Around the world</h4>
+                    <a href="http://edition.cnn.com/2017/06/11/tennis/french-open-nadal-wawrinka-decima/index.html"><img src="img/articles/article-5.jpg" alt="Rafeal Nadal"></a>
+                    <p class="large"><a href="http://edition.cnn.com/2017/06/11/tennis/french-open-nadal-wawrinka-decima/index.html">Rafael Nadal makes history at French Open</a></p>
+                    <div class="line"></div>
+                    <p><a href="http://edition.cnn.com/2017/06/09/politics/melania-trump-white-house-move/index.html">Melania moves into the White House</a></p>
+                    <div class="line"></div>
+                    <p><a href="http://edition.cnn.com/2017/06/11/politics/trump-uk-visit/index.html">White House denies Trump will delay UK visit</a></p>
+                    <div class="line"></div>
+                    <p><a href="http://edition.cnn.com/2017/06/11/middleeast/iran-qatar-planes-food/index.html">Iran sends planes stuffed with food to Qatar</a></p>
+                    <div class="line"></div>
+                    <p><a href="http://money.cnn.com/2017/06/11/news/qatar-john-ashcroft/index.html">Qatar hires Bush attorney general</a></p>
+                    <div class="line"></div>
+                    <p><a href="http://money.cnn.com/2017/06/11/technology/culture/uber-board-meeting/index.html">Uber workplace culture under fire</a></p>
+                    <div class="line"></div>
+                    <p><a href="http://edition.cnn.com/2017/06/11/europe/richard-hammond-crash-top-gear/index.html">TV host after crash: 'I'm not dead'</a></p>
+                    <div class="line"></div>
+                    <p><a href="http://edition.cnn.com/2017/06/11/europe/london-bridge-attack-fake-explosive-belts/index.html">London: Fake suicide belt photos released</a></p>
+                </div>
+                <div class="col-lg-5 col-md-12 flex">
+                    <h4 class="section-header">Featured</h4>
+                    <a href="http://edition.cnn.com/2017/06/11/health/orlando-one-year-voicemails/index.html"><img src="img/articles/article-6.jpg" alt="pulse"></a>
+                    <p class="main-img-caption">One year on</p>
+                    <p class="article-title"><a href="http://edition.cnn.com/2017/06/11/health/orlando-one-year-voicemails/index.html">How Pulse massacre pushed some back into the closet</a></p>
+                    <div class="subarticle">
+                        <div class="row">
+                            <div class="col-6">
+                                <a href="http://edition.cnn.com/2017/06/12/luxury/generation-wealth-america-wealth-obsession/index.html"><img  class="subarticle-img1" src="img/articles/article-7.jpg" alt="girl with money"></a>
+                            </div>
+                            <div class="col-6">
+                                <p><a href="http://edition.cnn.com/2017/06/12/luxury/generation-wealth-america-wealth-obsession/index.html">Wealth obsession gone too far?</a></p>
+                            </div>
+                        </div>
+                        <div class="line"></div>
+                        <div class="row">
+                            <div class="col-6">
+                                <a href="http://edition.cnn.com/2017/06/09/arts/henry-hargreaves-food-photography/index.html"><img  class="subarticle-img1" src="img/articles/article-8.jpg" alt="food"></a>
+                            </div>
+                            <div class="col-6">
+                                <p><a href="http://edition.cnn.com/2017/06/09/arts/henry-hargreaves-food-photography/index.html">Why these are 'meals rejected by everyone'</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-12 subarticle">
+                    <h4 class="section-header">Spotlight</h4>
+                    <div class="row">
+                        <div class="col-5">
+                            <a href="http://edition.cnn.com/2017/06/11/tennis/maria-sharapova-injury-wimbledon/index.html"><img class="subarticle-img" src="img/articles/article-9.jpg" alt="Sharapova"></a>
+                        </div>
+                        <div class="col-7">
+                            <p><a href="http://edition.cnn.com/2017/06/11/tennis/maria-sharapova-injury-wimbledon/index.html">Sharapova pulls out of Wimbledon qualifying</a></p>
+                        </div>
+                    </div>
+                    <div class="line"></div>
+                    <div class="row">
+                        <div class="col-5">
+                            <a href="https://www.cnn.com/"><img class="subarticle-img" src="img/articles/article-10.jpg" alt="abandoned lebanon"></a>
+                        </div>
+                        <div class="col-7">
+                            <p><a href="https://www.cnn.com/">Why there are 47 Lebanons in the US</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-12 flex z-in">
+                    <h4 class="section-header">Take a closer look</h4>
+                    <a href="http://money.cnn.com/2017/06/11/media/wonder-woman-box-office-second-weekend-the-mummy/index.html"><img src="img/articles/article-11.jpg" alt="Wonderwomen"></a>
+                    <p class="large"><a href="http://money.cnn.com/2017/06/11/media/wonder-woman-box-office-second-weekend-the-mummy/index.html">'Wonder Woman' soars, 'The Mummy' staggers</a></p>
+                    <div class="line"></div>
+                    <div class="subarticle">
+                        <div class="row">
+                            <div class="col-5">
+                                <a href="http://edition.cnn.com/2017/06/11/motorsport/f1-canada-hamilton-vettel/index.html"><img class="subarticle-img" src="img/articles/article-12.jpg" alt="Hamilton and team"></a>
+                            </div>
+                            <div class="col-7">
+                                <p><a href="http://edition.cnn.com/2017/06/11/motorsport/f1-canada-hamilton-vettel/index.html">Hamilton gets sixth Canadian Grand Prix win</a></p>
+                            </div>
+                        </div>
+                        <div class="line"></div>
+                        <div class="row">
+                            <div class="col-5">
+                                <a href="http://edition.cnn.com/2017/06/11/us/orlando-pulse-gay-community/index.html"><img class="subarticle-img" src="img/articles/article-13.jpg" alt="Logo"></a>
+                            </div>
+                            <div class="col-7">
+                                <p><a href="http://edition.cnn.com/2017/06/11/us/orlando-pulse-gay-community/index.html">Orlando's new 'culture of compassion'</a></p>
+                            </div>
+                        </div>
+                        <div class="line"></div>
+                        <div class="row">
+                            <div class="col-5">
+                                <a href="http://edition.cnn.com/2017/04/12/health/compassion-happiness-training/index.html"><img class="subarticle-img" src="img/articles/article-14.jpg" alt="People hugging"></a>
+                            </div>
+                            <div class="col-7">
+                                <p><a href="http://edition.cnn.com/2017/04/12/health/compassion-happiness-training/index.html">Want to be happy and successful? Try compassion</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 flex">
+                    <a href="http://edition.cnn.com/2017/06/11/celebrities/tony-awards-2017/index.html"><img src="img/articles/article-15.jpg" alt="actor"></a>
+                    <p class="article-title-trans"><a href="http://edition.cnn.com/2017/06/11/celebrities/tony-awards-2017/index.html">Who were the big winners at the Tony Awards?</a></p>
+                    <div class="subarticle">
+                        <div class="row">
+                            <div class="col-6">
+                                <a href="http://edition.cnn.com/2017/06/08/travel/lantau-island-hong-kong/index.html"><img  class="subarticle-img1" src="img/articles/article-16.jpg" alt="island"></a>
+                            </div>
+                            <div class="col-6">
+                                <p><a href="http://edition.cnn.com/2017/06/08/travel/lantau-island-hong-kong/index.html">Exploring Hong Kong's greenest island</a></p>
+                            </div>
+                        </div>
+                        <div class="line"></div>
+                        <div class="row">
+                            <div class="col-6">
+                                <a href="http://edition.cnn.com/2017/06/05/africa/george-rodger-nuba-latuka-sudan/index.html"><img  class="subarticle-img1" src="img/articles/article-17.jpg" alt="ancient tribe"></a>
+                            </div>
+                            <div class="col-6">
+                                <p><a href="http://edition.cnn.com/2017/06/05/africa/george-rodger-nuba-latuka-sudan/index.html">'Lost' photos of ancient tribe uncovered</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 flex">
+                    <h4 class="section-header"><a href="http://edition.cnn.com/opinions">Opinion <i class="fa fa-angle-right icon-right"></i></a></h4>
+                    <a href="http://edition.cnn.com/2017/06/11/opinions/macron-france-strongman-opinion-andelman/index.html"><img src="img/articles/article-18.jpg" alt="Ukrain"></a>
+                    <p class="large"><a href="http://edition.cnn.com/2017/06/11/opinions/macron-france-strongman-opinion-andelman/index.html"><span class="bold">David A. Andelman:</span> Macron, the strongman Europe needs</a></p>
+                    <div class="line"></div>
+                    <div class="subarticle">
+                        <div class="row">
+                            <div class="col-5">
+                                <a href="http://edition.cnn.com/2017/06/10/opinions/qatar-student-oma-seddiq-opinion/index.html"><img class="subarticle-img" src="img/articles/article-19.jpg" alt="Oma Seddiq"></a>
+                            </div>
+                            <div class="col-7">
+                                <p><a href="http://edition.cnn.com/2017/06/10/opinions/qatar-student-oma-seddiq-opinion/index.html"><span class='bold'>Oma Seddiq:</span> My life as a student in Qatar</a></p>
+                            </div>
+                        </div>
+                        <div class="line"></div>
+                        <div class="row">
+                            <div class="col-5">
+                                <a href="http://edition.cnn.com/2017/06/09/opinions/opinion-beers-may-leadership/index.html"><img class="subarticle-img" src="img/articles/article-20.jpg" alt="Laura Beers"></a>
+                            </div>
+                            <div class="col-7">
+                                <p><a href="http://edition.cnn.com/2017/06/09/opinions/opinion-beers-may-leadership/index.html"><span class='bold'>Laura Beers:</span> History says Theresa May must go</a></p>
+                            </div>
+                        </div>
+                        <div class="line"></div>
+                        <div class="row">
+                            <div class="col-5">
+                                <a href="http://edition.cnn.com/2017/06/09/opinions/corbyn-left-wing-populism-opinion-bloodworth/index.html"><img class="subarticle-img" src="img/articles/article-21.jpg" alt="James Bloodworth"></a>
+                            </div>
+                            <div class="col-7">
+                                <p><a href="http://edition.cnn.com/2017/06/09/opinions/corbyn-left-wing-populism-opinion-bloodworth/index.html"><span class="bold">Bloodworth:</span> Rise of the left-wing shakes UK politics</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row spacing">
+                <div class="column col-12">
+                    <h3>Featured Sections</h3>
+                    <div class="line"></div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 flex">
+                    <h4 class="section-header"><a href="http://edition.cnn.com/sport">Sport <i class="fa fa-angle-right icon-right"></i></a></h4>
+                    <a href="https://edition.cnn.com/2017/06/05/football/as-roma-director-of-performance-darcy-norman/index.html"><img src="img/articles/article-22.jpg" alt="soccer player"></a>
+                    <p class="large"><a href="http://edition.cnn.com/2017/06/05/football/as-roma-director-of-performance-darcy-norman/index.html">What happens in the 21 hours when soccer stars aren't training</a></p>
+                    <div class="line"></div>
+                    <p><a href="http://edition.cnn.com/2017/06/01/tennis/paris-roland-garros-renovation-gardens/index.html">Red clay goes 'green' in $400M refurb</a></p>
+                    <div class="line"></div>
+                    <p><a href="http://edition.cnn.com/2017/05/18/football/buffon-juventus-wine-serie-a/index.html">Grapes of success: Buffon ventures into wine business</a></p>
+                    <div class="line"></div>
+                    <p><a href="http://edition.cnn.com/2017/05/31/sport/bryan-habana-dna-testing-rugby/index.html">Bryan Habana: Rugby star's surprise DNA discovery</a></p>
+                    <div class="line"></div>
+                    <p><a href="http://edition.cnn.com/2017/05/26/football/nice-mario-balotelli/index.html">Mario Balotelli isn't trouble, 'he's a good guy'</a></p>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 flex">
+                    <h4 class="section-header"><a href="https://edition.cnn.com/style">Travel <i class="fa fa-angle-right icon-right"></i></a></h4>
+                    <a href="https://edition.cnn.com/travel/article/tagaytay-taal-volcano-philippines/index.html"><img src="img/articles/article-23.jpg" alt="island"></a>
+                    <p class="large"><a href="http://edition.cnn.com/2017/06/07/travel/tagaytay-taal-volcano-philippines/index.html">A volcano on an island within a lake within an island</a></p>
+                    <div class="line"></div>
+                    <p><a href="http://edition.cnn.com/2017/06/08/foodanddrink/in-24-hours-montreal-taffy/index.html">The best maple syrup taffy in Montreal</a></p>
+                    <div class="line"></div>
+                    <p><a href="http://edition.cnn.com/2017/06/08/travel/lantau-island-hong-kong/index.html">lantau: Exploring Hong Kong's greenest island</a></p>
+                    <div class="line"></div>
+                    <p><a href="http://edition.cnn.com/2017/06/05/travel/silk-road-secrets-central-asia-uzbekistan-and-kazakhstan/index.html">Secrets of the ancient Silk Road</a></p>
+                    <div class="line"></div>
+                    <p><a href="http://edition.cnn.com/2017/06/08/travel/blanca-miro-scrimieri-barcelona-shopping-guide/index.html">Shopping in Barcelona: A fashion stylist's guide</a></p>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 flex">
+                    <h4 class="section-header"><a href="">Style <i class="fa fa-angle-right icon-right"></i></a></h4>
+                    <a href="https://edition.cnn.com/style/article/photoviz-visualizing-information-through-photography/index.html"><img src="img/articles/article-24.jpg" alt="airplanes"></a>
+                    <p class="large"><a href="http://edition.cnn.com/2016/11/21/design/photoviz-visualizing-information-through-photography/index.html">Incredible photos show the world as you've never seen it</a></p>
+                    <div class="line"></div>
+                    <p><a href="http://edition.cnn.com/2016/12/20/arts/nicolas-bruno-sleep-paralysis/index.html">The terrifying symptoms of sleep paralysis</a></p>
+                    <div class="line"></div>
+                    <p><a href="http://edition.cnn.com/2017/05/04/architecture/us-embassy-design/index.html">US embassy sparks controversy</a></p>
+                    <div class="line"></div>
+                    <p><a href="http://edition.cnn.com/2017/01/04/architecture/vincent-callebaut-tao-zhu-yin-yuan/index.html">The new carbon-eating tower rising in the East</a></p>
+                    <div class="line"></div>
+                    <p><a href="http://edition.cnn.com/2016/01/27/asia/china-hipster-grandpa-viral-photos/">Touching tribute to 'hipster' grandpa goes viral</a></p>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 flex">
+                    <h4 class="section-header"><a href="https://www.cnn.com/business">CNN Money <i class="fa fa-angle-right icon-right"></i></a></h4>
+                    <a href="https://money.cnn.com/2017/06/07/news/economy/trump-travel-ban-paris-global-tourism/index.html"><img src="img/articles/article-25.jpg" alt="white house"></a>
+                    <p class="large"><a href="http://money.cnn.com/2017/06/07/news/economy/trump-travel-ban-paris-global-tourism/index.html">Trump is hurting American tourism</a></p>
+                    <div class="line"></div>
+                    <p><a href="http://money.cnn.com/2017/06/07/news/economy/australia-economy-growth-run/">Australia extends epic recession-free run</a></p>
+                    <div class="line"></div>
+                    <p><a href="http://money.cnn.com/gallery/news/companies/2017/05/31/top-paid-ceos/">10 top-paid CEOs</a></p>
+                    <div class="line"></div>
+                    <p><a href="http://money.cnn.com/video/news/2017/05/26/watch-350-balls-of-cotton-turn-into-a-shirt.cnnmoney/index.html">Watch 350 balls of cotton turn into a shirt</a></p>
+                    <div class="line"></div>
+                    <p><a href="http://money.cnn.com/video/news/economy/2017/05/29/russia-economy-resilience.cnnmoney/index.html">How Russia's economy is staying resilient</a></p>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 flex">
+                    <h4 class="section-header"><a href="https://edition.cnn.com/health">Health <i class="fa fa-angle-right icon-right"></i></a></h4>
+                    <a href="https://edition.cnn.com/2017/04/10/health/fruits-poison-litchee-ackee-nerve-disease/"><img src="img/articles/article-26.jpg" alt="fruit"></a>
+                    <p class="large"><a href="http://edition.cnn.com/2017/04/10/health/fruits-poison-litchee-ackee-nerve-disease/">Fruits and veggies that could poison you</a></p>
+                    <div class="line"></div>
+                    <p><a href="http://edition.cnn.com/2017/05/19/health/weight-loss-circadian-rhythms-drayer/">'Stealthing,': others call it sexual assault</a></p>
+                    <div class="line"></div>
+                    <p><a href="http://edition.cnn.com/2017/05/19/health/weight-loss-circadian-rhythms-drayer/">Weight loss tied to when, not what, you eat</a></p>
+                    <div class="line"></div>
+                    <p><a href="http://edition.cnn.com/2017/05/24/health/sex-parents-talking-to-kids/index.html">Your kids want to talk to you about sex</a></p>
+                    <div class="line"></div>
+                    <p><a href="http://edition.cnn.com/2017/06/02/health/tattoo-infected-sepsis-death-vibrio-study/">Man dies after swimming with new tattoo</a></p>
+                </div>
+            </div>
+            <div class="row spacing video">
+                <div class="column col-12">
+                    <h3>Watch it</h3>
+                    <div class="line"></div>
+                </div>
+                <div class="col-12 full-section-header">
+                    <h4 class="section-header"><a href="https://edition.cnn.com/videos">Must see videos <i class="fa fa-angle-right icon-right"></i></a></h4>
+                </div>
+                <div class="col-6 col-md-3 flex">
+                    <a href="https://edition.cnn.com/videos/us/2017/06/09/orlando-pulse-shooting-one-year-anniversary-voicemails-orig-mg.cnn"><img class="video-photo" src="img/articles/video-1.jpeg" alt="cop cars"></a>
+                    <a href="http://edition.cnn.com/videos/us/2017/06/09/orlando-pulse-shooting-one-year-anniversary-voicemails-orig-mg.cnn"><p class="media-button"><i class="fa-regular fa-circle-play"></i> 2:25</p></a>
+                    <p class="large"><a href="http://edition.cnn.com/videos/us/2017/06/09/orlando-pulse-shooting-one-year-anniversary-voicemails-orig-mg.cnn">Your voicemails: One year after Orlando</a></p>
+                </div>
+                <div class="col-6 col-md-3 flex">
+                    <a href="http://edition.cnn.com/videos/cnnmoney/2017/06/10/fallon-kimmel-colbert-trump-comey-drama-late-night-orig-vstan-cws.cnn"><img class="video-photo" src="img/articles/video-2.jpeg" alt="cop cars"></a>
+                    <a href="http://edition.cnn.com/videos/cnnmoney/2017/06/10/fallon-kimmel-colbert-trump-comey-drama-late-night-orig-vstan-cws.cnn"><p class="media-button"><i class="fa-regular fa-circle-play"></i> 1:22</p></a>
+                    <p class="large"><a href="http://edition.cnn.com/videos/cnnmoney/2017/06/10/fallon-kimmel-colbert-trump-comey-drama-late-night-orig-vstan-cws.cnn">Late night lampoons Trump-Comey drama</a></p>
+                </div>
+                <div class="col-6 col-md-3 flex">
+                    <a href="https://edition.cnn.com/videos/world/2017/06/09/uk-election-unfolded-sje-lon-orig.cnn"><img class="video-photo" src="img/articles/video-3.jpeg" alt="Uk"></a>
+                    <a href="https://edition.cnn.com/videos/world/2017/06/09/uk-election-unfolded-sje-lon-orig.cnn"><p class="media-button"><i class="fa-regular fa-circle-play"></i> 1:35</p></a>
+                    <p class="large"><a href="https://edition.cnn.com/videos/world/2017/06/09/uk-election-unfolded-sje-lon-orig.cnn">How an extraordinary UK election unfolded</a></p>
+                </div>
+                <div class="col-6 col-md-3 flex">
+                    <a href="https://edition.cnn.com/videos/tv/2017/02/20/emmanuel-macron-profile-mkd-orig.cnn"><img class="video-photo" src="img/articles/video-4.jpeg" alt="Emmanuel Macron"></a>
+                    <a href="https://edition.cnn.com/videos/tv/2017/02/20/emmanuel-macron-profile-mkd-orig.cnn"><p class="media-button"><i class="fa-regular fa-circle-play"></i> 1:32</p></a>
+                    <p class="large"><a href="https://edition.cnn.com/videos/tv/2017/02/20/emmanuel-macron-profile-mkd-orig.cnn">What to know about Emmanuel Macron</a></p>
+                </div>
+                <div class="col-6 col-md-3 flex">
+                    <a href="https://edition.cnn.com/videos/sports/2017/06/08/neymar-wonder-goal-jimmy-kimmel-live-fc-barcelona-orig.cnn"><img class="video-photo" src="img/articles/video-5.jpeg" alt="Neymar"></a>
+                    <a href="https://edition.cnn.com/videos/sports/2017/06/08/neymar-wonder-goal-jimmy-kimmel-live-fc-barcelona-orig.cnn"><p class="media-button"><i class="fa-regular fa-circle-play"></i> 1:08</p></a>
+                    <p class="large"><a href="https://edition.cnn.com/videos/sports/2017/06/08/neymar-wonder-goal-jimmy-kimmel-live-fc-barcelona-orig.cnn">Brazilian star Neymar goes to Hollywood</a></p>
+                </div>
+                <div class="col-6 col-md-3 flex">
+                    <a href="https://edition.cnn.com/videos/us/2017/06/10/lincoln-memorial-reflecting-pool-drained-orig.cnn"><img class="video-photo" src="img/articles/video-6.jpeg" alt="Dc reflecting pool"></a>
+                    <a href="https://edition.cnn.com/videos/us/2017/06/10/lincoln-memorial-reflecting-pool-drained-orig.cnn"><p class="media-button"><i class="fa-regular fa-circle-play"></i> 0:53</p></a>
+                    <p class="large"><a href="https://edition.cnn.com/videos/us/2017/06/10/lincoln-memorial-reflecting-pool-drained-orig.cnn">80 ducklings die in monument reflecting pool</a></p>
+                </div>
+                <div class="col-6 col-md-3 flex">
+                    <a href="https://edition.cnn.com/videos/world/2017/06/11/richard-hammond-crash-vstop-jpm-orig.cnn"><img class="video-photo" src="img/articles/video-7.jpeg" alt="Top gun host"></a>
+                    <a href="https://edition.cnn.com/videos/world/2017/06/11/richard-hammond-crash-vstop-jpm-orig.cnn"><p class="media-button"><i class="fa-regular fa-circle-play"></i> 1:11</p></a>
+                    <p class="large"><a href="https://edition.cnn.com/videos/world/2017/06/11/richard-hammond-crash-vstop-jpm-orig.cnn">Former 'Top Gear' host jokes after crash</a></p>
+                </div>
+            </div>
+            <div class="row spacing video">
+                <div class="column col-12">
+                    <h3>Photos you should see</h3>
+                    <div class="line"></div>
+                </div>
+                <div class="col-6 col-md-4 flex">
+                    <a href="https://edition.cnn.com/2015/11/09/sport/gallery/anna-kournikova-tennis-sport-marketing-sponsorship/index.html"><img class="video-photo" src="img/articles/photo-1.jpeg" alt="Anna Kournikova"></a>
+                    <a href="https://edition.cnn.com/2015/11/09/sport/gallery/anna-kournikova-tennis-sport-marketing-sponsorship/index.html"><p class="media-button"><i class="fa fa-camera"></i></p></a>
+                    <p class="large"><a href="https://edition.cnn.com/2015/11/09/sport/gallery/anna-kournikova-tennis-sport-marketing-sponsorship/index.html">Anna Kournikova through the years</a></p>
+                </div>
+                <div class="col-6 col-md-4 flex">
+                    <a href="https://edition.cnn.com/2017/06/07/tennis/gallery/french-open-2017-absent-sharapova-federer-williams-azarenka/index.html"><img class="video-photo" src="img/articles/photo-2.jpeg" alt="French Open"></a>
+                    <a href="https://edition.cnn.com/2017/06/07/tennis/gallery/french-open-2017-absent-sharapova-federer-williams-azarenka/index.html"><p class="media-button"><i class="fa fa-camera"></i></p></a>
+                    <p class="large"><a href="https://edition.cnn.com/2017/06/07/tennis/gallery/french-open-2017-absent-sharapova-federer-williams-azarenka/index.html">A French Open wardrobe malfunction?</a></p>
+                </div>
+                <div class="col-6 col-md-4 flex">
+                    <a href="https://edition.cnn.com/2017/05/30/tennis/gallery/rafael-nadal-french-open-over-the-years/index.html"><img class="video-photo" src="img/articles/photo-3.jpeg" alt="Nadal"></a>
+                    <a href="https://edition.cnn.com/2017/05/30/tennis/gallery/rafael-nadal-french-open-over-the-years/index.html"><p class="media-button"><i class="fa fa-camera"></i></p></a>
+                    <p class="large"><a href="https://edition.cnn.com/2017/05/30/tennis/gallery/rafael-nadal-french-open-over-the-years/index.html">Nadal's style evolution</a></p>
+                </div>
+                <div class="col-6 col-md-4 flex">
+                    <a href="https://edition.cnn.com/2017/06/02/sport/gallery/americas-cup-best-photos/index.html"><img class="video-photo" src="img/articles/photo-4.jpeg" alt="Ocean and sail boat"></a>
+                    <a href="https://edition.cnn.com/2017/06/02/sport/gallery/americas-cup-best-photos/index.html"><p class="media-button"><i class="fa fa-camera"></i></p></a>
+                    <p class="large"><a href="https://edition.cnn.com/2017/06/02/sport/gallery/americas-cup-best-photos/index.html">'Beautiful races, real action'</a></p>
+                </div>
+                <div class="col-6 col-md-4 flex">
+                    <a href="https://edition.cnn.com/2017/05/31/sport/gallery/clive-mason-sailing-rio-2016-best-photography-portfolio/index.html"><img class="video-photo" src="img/articles/photo-5.jpeg" alt="mountains"></a>
+                    <a href="https://edition.cnn.com/2017/05/31/sport/gallery/clive-mason-sailing-rio-2016-best-photography-portfolio/index.html"><p class="media-button"><i class="fa fa-camera"></i></p></a>
+                    <p class="large"><a href="https://edition.cnn.com/2017/05/31/sport/gallery/clive-mason-sailing-rio-2016-best-photography-portfolio/index.html">Award-winning sailing snaps</a></p>
+                </div>
+                <div class="col-6 col-md-4 flex">
+                    <a href="https://edition.cnn.com/2017/05/16/sport/gallery/sybaris-wins-best-sailing-yacht-at-world-superyacht-awards/index.html"><img class="video-photo" src="img/articles/photo-6.jpeg" alt="Giant sailboat"></a>
+                    <a href="https://edition.cnn.com/2017/05/16/sport/gallery/sybaris-wins-best-sailing-yacht-at-world-superyacht-awards/index.html"><p class="media-button"><i class="fa fa-camera"></i></p></a>
+                    <p class="large"><a href="https://edition.cnn.com/2017/05/16/sport/gallery/sybaris-wins-best-sailing-yacht-at-world-superyacht-awards/index.html">The world's best sailing superyacht</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="extra">
+            <div class="container">
+                <div class="row">
+                    <div class="column col-12">
+                        <h3>In Case You Missed It</h3>
+                        <div class="line"></div>
+                    </div>
+                    <div class="col-lg-8 col-md-12 flex">
+                        <a href="https://edition.cnn.com/2017/05/09/middleeast/syria-chemical-attack-ward/index.html"><img src="img/articles/article-27.jpg" alt="syria"></a>
+                        <p class="main-img-caption">Cnn Exclusive</p>
+                        <p class="article-title-trans"><a href="https://edition.cnn.com/2017/05/09/middleeast/syria-chemical-attack-ward/index.html">Harrowing video shows Syria's war on its own children</a></p>
+                    </div>
+                    <div class="col-lg-4 col-md-12 flex img-stacked">
+                        <div class="img-caption">
+                            <a href="https://edition.cnn.com/interactive/2017/03/europe/quiz-how-european-are-you/"><img src="img/articles/article-28.jpg" alt="Leaders"></a>
+                            <p class="large"><a href="https://edition.cnn.com/interactive/2017/03/europe/quiz-how-european-are-you/">Which European leader are you?</a></p>
+                        </div>
+                        <div class="img-caption">
+                            <a href="https://edition.cnn.com/2017/04/21/americas/venezuela-crisis-explained/index.html"><img src="img/articles/article-29.jpg" alt="Venezula"></a>
+                            <p class="large"><a href="https://edition.cnn.com/2017/04/21/americas/venezuela-crisis-explained/index.html">Venezuela: How paradise got lost</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top-block">
+                    <div class="footer-weather">
+                        <p class="location">London, United Kingdom</p>
+                        <img src="img/weather-icon.png" alt="weather icon" height="38px">
+                        <div class="temp">16°</div>
+                    </div>
+                    <div class="search-block">
+                        <input type="search" class="search"id="label-search" placeholder="Search CNN...">
+                        <label for="label-search"><a href="http://edition.cnn.com/search/"><i class="fa-sharp fa-solid fa-magnifying-glass fa-flip-horizontal"></i></a></label>
+                    </div>
+            </div>
+        </div>
+        <div class="expanded-top-block">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-2 col-md-4 col-sm-12">
+                        <div class="expanded-col">
+                            <h3><a href="https://edition.cnn.com/world" class="extended-menu-title">Regions</a></h3>
+                            <ul>
+                                <li><a href="https://edition.cnn.com/us" class="expanded-top-link" class="expanded-top-link">U.S.</a></li>
+                                <li><a href="https://edition.cnn.com/world/africa" class="expanded-top-link">Africa</a></li>
+                                <li><a href="https://edition.cnn.com/world/americas" class="expanded-top-link">Americas</a></li>
+                                <li><a href="https://www.cnn.com/world/asia" class="expanded-top-link">Asia</a></li>
+                                <li><a href="https://edition.cnn.com/world/china" class="expanded-top-link">China</a></li>
+                                <li><a href="https://edition.cnn.com/world/europe" class="expanded-top-link">Europe</a></li>
+                                <li><a href="https://edition.cnn.com/world/middle-east" class="expanded-top-link">Middle East</a></li>
+                                <li><a href="https://edition.cnn.com/opinions" class="expanded-top-link">Opinion</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-12">
+                        <div class="expanded-col">
+                            <h3><a href="https://edition.cnn.com/politics" class="extended-menu-title">U.S. Politics</a></h3>
+                            <ul>
+                                <li><a href="https://edition.cnn.com/specials/politics/president-donald-trump-45" class="expanded-top-link">45</a></li>
+                                <li><a href="https://edition.cnn.com/specials/politics/congress-capitol-hill" class="expanded-top-link">Congress</a></li>
+                                <li><a href="https://edition.cnn.com/specials/politics/us-security" class="expanded-top-link">Security</a></li>
+                                <li><a href="https://edition.cnn.com/politics/supreme-court" class="expanded-top-link">The Nine</a></li>
+                                <li><a href="https://edition.cnn.com/specials/politics/trumpmerica" class="expanded-top-link">Trumpmerica</a></li>
+                                <li><a href="https://edition.cnn.com/specials/politics/state-cnn-politics-magazine" class="expanded-top-link">State</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-12">
+                        <div class="expanded-col">
+                            <h3><a href="https://edition.cnn.com/business" class="extended-menu-title">Money</a></h3>
+                            <ul>
+                                <li><a href="https://www.cnn.com/business" class="expanded-top-link">Business</a></li>
+                                <li><a href="https://www.cnn.com/markets" class="expanded-top-link">Markets</a></li>
+                                <li><a href="https://www.cnn.com/business/tech" class="expanded-top-link">Tech</a></li>
+                                <li><a href="https://www.cnn.com/business/cars" class="expanded-top-link">Luxury</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-12">
+                        <div class="expanded-col">
+                            <h3><a href="https://edition.cnn.com/entertainment" class="extended-menu-title">entertainment</a></h3>
+                            <ul>
+                                <li><a href="https://edition.cnn.com/entertainment/celebrities" class="expanded-top-link">Stars</a></li>
+                                <li><a href="https://edition.cnn.com/entertainment/movies" class="expanded-top-link">Screen</a></li>
+                                <li><a href="https://edition.cnn.com/entertainment/tv-shows" class="expanded-top-link">Binge</a></li>
+                                <li><a href="https://edition.cnn.com/entertainment" class="expanded-top-link">Culture</a></li>
+                                <li><a href="https://www.cnn.com/business/media" class="expanded-top-link">Media</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-12">
+                        <div class="expanded-col">
+                            <h3><a href="https://www.cnn.com/business/tech" class="extended-menu-title">tech</a></h3>
+                            <ul>
+                                <li><a href="https://www.cnn.com/business/tech" class="expanded-top-link">Business</a></li>
+                                <li><a href="https://www.cnn.com/business/tech" class="expanded-top-link">Culture</a></li>
+                                <li><a href="https://www.cnn.com/business/tech" class="expanded-top-link">Gadgets</a></li>
+                                <li><a href="https://www.cnn.com/business/tech" class="expanded-top-link">Future</a></li>
+                                <li><a href="https://www.cnn.com/business/tech" class="expanded-top-link">Startups</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-12">
+                        <div class="expanded-col">
+                            <h3><a href="https://edition.cnn.com/sport" class="extended-menu-title">Sport</a></h3>
+                            <ul>
+                                <li><a href="https://edition.cnn.com/sport/football" class="expanded-top-link">Football</a></li>
+                                <li><a href="https://edition.cnn.com/sport/golf" class="expanded-top-link">Golf</a></li>
+                                <li><a href="https://edition.cnn.com/sport/tennis" class="expanded-top-link">Tennis</a></li>
+                                <li><a href="https://edition.cnn.com/sport/motorsport" class="expanded-top-link">Motorsport</a></li>
+                                <li><a href="https://edition.cnn.com/sport" class="expanded-top-link">Horseracing</a></li>
+                                <li><a href="https://edition.cnn.com/sport" class="expanded-top-link">Equestrian</a></li>
+                                <li><a href="https://edition.cnn.com/sport" class="expanded-top-link">Sailing</a></li>
+                                <li><a href="https://edition.cnn.com/sport" class="expanded-top-link">Skiing</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-2 col-md-4 col-sm-12">
+                        <div class="expanded-col">
+                            <h3><a href="https://edition.cnn.com/travel" class="extended-menu-title">Travel</a></h3>
+                            <ul>
+                                <li><a href="https://edition.cnn.com/travel/aviation" class="expanded-top-link">Aviation</a></li>
+                                <li><a href="https://edition.cnn.com/travel" class="expanded-top-link">Business Traveller</a></li>
+                                <li><a href="https://edition.cnn.com/travel/destinations" class="expanded-top-link">Destinations</a></li>
+                                <li><a href="https://edition.cnn.com/travel" class="expanded-top-link">Features</a></li>
+                                <li><a href="https://edition.cnn.com/travel/food-and-drink" class="expanded-top-link">Food/Drink</a></li>
+                                <li><a href="https://edition.cnn.com/travel/hotels" class="expanded-top-link">Hotels</a></li>
+                                <li><a href="https://www.cnnpartners.com" class="expanded-top-link">Partner Hotels</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-12">
+                        <div class="expanded-col">
+                            <h3><a href="https://edition.cnn.com/style" class="extended-menu-title">Style</a></h3>
+                            <ul>
+                                <li><a href="https://edition.cnn.com/style/fashion" class="expanded-top-link">Fashion</a></li>
+                                <li><a href="https://edition.cnn.com/style/design" class="expanded-top-link">Design</a></li>
+                                <li><a href="https://edition.cnn.com/style/architecture" class="expanded-top-link">Architecture</a></li>
+                                <li><a href="https://edition.cnn.com/style/arts" class="expanded-top-link">Arts</a></li>
+                                <li><a href="https://edition.cnn.com/style/autos" class="expanded-top-link">Autos</a></li>
+                                <li><a href="https://edition.cnn.com/style/luxury" class="expanded-top-link">Luxury</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-12">
+                        <div class="expanded-col">
+                            <h3><a href="https://edition.cnn.com/health" class="extended-menu-title">Health</a></h3>
+                            <ul>
+                                <li><a href="https://edition.cnn.com/specials/health/diet-fitness" class="expanded-top-link">Diet + Fitness</a></li>
+                                <li><a href="https://edition.cnn.com/specials/health/living-well" class="expanded-top-link">Living Well</a></li>
+                                <li><a href="https://edition.cnn.com/health/life-but-better/relationships" class="expanded-top-link">Parenting + Family</a></li>
+                                <li><a href="https://edition.cnn.com/specials/health/vital-signs" class="expanded-top-link">Vital Signs</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-12">
+                        <div class="expanded-col">
+                            <h3><a href="https://edition.cnn.com/specials" class="extended-menu-title">Features</a></h3>
+                            <ul>
+                                <li><a href="https://edition.cnn.com/interactive/2018/specials/freedom-project/" class="expanded-top-link">Freedom Project</a></li>
+                                <li><a href="https://edition.cnn.com/world/impact-your-world" class="expanded-top-link">Impact Your World</a></li>
+                                <li><a href="https://edition.cnn.com/world/africa/inside-africa" class="expanded-top-link">Inside Africa</a></li>
+                                <li><a href="https://edition.cnn.com/specials/opinions/two-degrees" class="expanded-top-link">2 degrees</a></li>
+                                <li><a href="https://edition.cnn.com/specials" class="expanded-top-link">All Features</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-12">
+                        <div class="expanded-col">
+                            <h3><a href="https://edition.cnn.com/videos" class="extended-menu-title">Video</a></h3>
+                            <ul>
+                                <li><a href="https://edition.cnn.com/specials/latest-news-videos" class="expanded-top-link">Video news</a></li>
+                                <li><a href="https://edition.cnn.com/specials/international-video-landing/feature-show-videos" class="expanded-top-link">Feature shows</a></li>
+                                <li><a href="https://edition.cnn.com/specials/videos/hln" class="expanded-top-link">HLN</a></li>
+                                <li><a href="https://edition.cnn.com/tv/shows" class="expanded-top-link">TV shows</a></li>
+                                <li><a href="https://edition.cnn.com/tv/schedule/europe" class="expanded-top-link">TV schedule</a></li>
+                                <li><a href="https://edition.cnn.com/profiles/faces-of-cnn" class="expanded-top-link">Faces of CNN Worldwide</a></li>
+                                <li><a href="https://edition.cnn.com/vr" class="expanded-top-link">CNN VR</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-12">
+                        <div class="expanded-col">
+                            <h3><a href="https://edition.cnn.com/more" class="extended-menu-title">More...</a></h3>
+                            <ul>
+                                <li><a href="https://edition.cnn.com/weather" class="expanded-top-link">Weather</a></li>
+                                <li><a href="https://edition.cnn.com/specials/cnn-heroes" class="expanded-top-link">CNN Heroes</a></li>
+                                <li><a href="https://edition.cnn.com/profiles" class="expanded-top-link">CNN Profiles</a></li>
+                                <li><a href="https://edition.cnn.com/profiles/cnn-leadership" class="expanded-top-link">Leadership</a></li>
+                                <li><a href="https://cnnpressroom.blogs.cnn.com/" class="expanded-top-link">Pressroom</a></li>
+                                <li><a href="https://edition.cnn.com/world" class="expanded-top-link">Partner sites</a></li>
+                                <li><a href="https://edition.cnn.com/" class="expanded-top-link">iReport</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-drop">
+                    <img src="img/logo_cnn.png" alt="cnn logo">
+                    <div class="international-edition">
+                        <input type="checkbox" id="international-switcher1" hidden>
+                        <label for="international-switcher1">International Edition <span class="checked-change"><i class="fa-solid fa-plus"></i></span></label>
+                        <div class="international-block1">
+                            <ul>
+                                <li><a href="https://us.cnn.com/?hpt=header_edition-picker">U.S.</a></li>
+                                <li><a href="https://arabic.cnn.com/?hpt=header_edition-picker">Arabic</a></li>
+                                <li><a href="https://cnnespanol.cnn.com/?hpt=header_edition-picker">Español</a></li>
+                            </ul>
+                            <hr>
+                            <p>Set edition preference:</p>
+                            <div class="row-block flex-block">
+                                <input type="radio" id="us-id" name="preference">
+                                <label for="us-id">U.S.</label>
+                                <input type="radio" id="inter-id" name="preference" checked>
+                                <label for="inter-id">International</label>
+                            </div>
+                            <div class="row-block flex-block">
+                                <button class="confirm">Confirm</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom-info">
+                    <p>© 2017 Cable News Network. Turner Broadcasting System, Inc. All Rights Reserved.</p>
+                    <p>CNN Sans ™ & © 2016 Cable News Network.</p>
+                    <ul class="footer-bottom-info-link">
+                        <li><a href="http://edition.cnn.com/terms">Terms of Use</a></li>
+                        <li><a href="http://edition.cnn.com/privacy">Privacy Policy</a></li>
+                        <li><a href="http://edition.cnn.com/#">AdChoices</a></li>
+                        <li><a href="http://commercial.cnn.com/">Advertise with us</a></li>
+                        <li><a href="http://edition.cnn.com/about">About us</a></li>
+                        <li><a href="http://edition.cnn.com/newsletters">Newsletters</a></li>
+                        <li><a href="http://www.wearecnn.com/">Work for us</a></li>
+                        <li><a href="http://edition.cnn.com/help">Help</a></li>
+                        <li><a href="http://edition.cnn.com/transcripts">Transcripts</a></li>
+                        <li><a href="http://edition.cnn.com/collection">License Footage</a></li>
+                        <li><a href="http://cnnnewsource.com/">CNN Newsource</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+</body>
